@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/Users/macromrit/.local/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/macromrit/Desktop/mcp-test/server/weather.py"
+      ]
+    }
+  }
+}

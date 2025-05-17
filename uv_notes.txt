@@ -1,0 +1,49 @@
+uv init project-name
+uv venv # created env for env vairables
+source .venv/bin/activate # activate them
+uv add "mcp[cli]" # is important as is used to build fastMCP
+
+
+uv run mcp dev server/weather.py # for MCP inspector
+
+2 Transport Types (Built-In)
+    - STDIO [client and server in the same machine]
+    - SSE [client and server seperate, communicates with help of HTTP post request]
+
+Tools -> Have computations [POST like]
+Resources -> How to expose data to LLMs [GET like]
+Prompts -> are resuable templates that help LLMs interact with server effectively
+
+uv run mcp install server/weather.py # to install in calude destop app
+
+
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/Users/macromrit/.local/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/macromrit/Desktop/mcp-test/server/weather.py"
+      ]
+    }
+  }
+}
+
+
+to integrate directly with Command Line, add weather.json
+
+uv add mcp-use # opensource way to connect any llms to any mcp server
+
+uv add langchain-groq # for groq integration
+
+to run python files do like this
+  uv run server/client.py
+
+can dockerize too
+  - have the docker file properly configured
+  - docker build -t mcp-server . # to build
+  - docker run -p 8000:8000 mcp-server # to run
